@@ -1,0 +1,41 @@
+.list {
+	display: none;
+	&.show {
+		@include sm-device {
+			display: block;
+		}
+	}
+	&.active {
+		background: $yellow;
+	}
+	&:hover {
+		background: $yellow;
+	}
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 8px;
+		left: 0px;
+		width: inherit;
+		height: inherit;
+		background: inherit;
+	}
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: -8px;
+		left: 0px;
+		width: inherit;
+		height: inherit;
+		background: inherit;
+	}
+	position: absolute;
+	right: 50px;
+	top: 50px;
+	border: 0;
+	width: 25px;
+	height: 5px;
+	background: $text-color;
+}

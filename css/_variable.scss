@@ -1,0 +1,20 @@
+$bg-color: #f0f2f3;
+$text-color: #515151;
+$border-color: #d6d4d4;
+$yellow: #ffc12d;
+
+@mixin sm-device {
+	@media (min-width: 768px) {
+		@content;
+	}
+}
+@mixin md-device {
+	@media (min-width: 991px) {
+		@content;
+	}
+}
+@mixin lg-device {
+	@media (min-width: 1199px) {
+		@content;
+	}
+}

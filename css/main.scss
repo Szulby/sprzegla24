@@ -1,0 +1,151 @@
+@import '_resetcss.scss';
+@import '_variable.scss';
+@import '_container.scss';
+@import '_listButton.scss';
+html {
+	scroll-behavior: smooth;
+}
+body {
+	background-color: $bg-color;
+	position: relative;
+}
+p {
+	color: $text-color;
+}
+main {
+	min-height: 100%;
+	position: relative;
+}
+
+header {
+	width: 100%;
+	background: white;
+	& .center {
+		max-width: 1300px;
+		margin: 0 auto;
+	}
+}
+.jumbotron {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	& img {
+		width: 160%;
+		margin: 0 -40%;
+		height: auto;
+		@include md-device {
+			width: 130%;
+			margin: 0 -25%;
+		}
+		@include lg-device {
+			width: 100%;
+			margin: 0;
+		}
+	}
+	& .text {
+		position: absolute;
+		left: 20px;
+		top: 50px;
+		color: $yellow;
+
+		& p {
+			margin-top: 10px;
+			color: $bg-color;
+			font-size: 18px;
+			font-weight: bold;
+		}
+		& h1 {
+			font-size: 45px;
+			color: $bg-color;
+		}
+		& h2 {
+			margin-top: 15px;
+			font-size: 25px;
+			color: $bg-color;
+		}
+		& button {
+			border: none;
+			color: $text-color;
+			background: $yellow;
+			width: 150px;
+			height: 50px;
+			margin-top: 20px;
+			&:hover {
+				background: $bg-color;
+			}
+		}
+		@include sm-device {
+			left: 100px;
+			top: 200px;
+			& p {
+				font-size: 25px;
+			}
+			& h2 {
+				font-size: 40px;
+			}
+			& h1 {
+				font-size: 70px;
+			}
+		}
+		@include lg-device {
+			left: 250px;
+		}
+	}
+}
+.show-more {
+	display: none;
+	text-align: center;
+	margin: 40px auto 0 auto;
+	border: 1px solid $border-color;
+	width: 150px;
+	height: 50px;
+	color: $text-color;
+	background: $yellow;
+	text-transform: uppercase;
+	&:hover {
+		color: white;
+		background: $text-color;
+	}
+}
+
+.scroll-top {
+	display: flex;
+	pointer-events: none;
+	transition: opacity 1s ease-out;
+	opacity: 0;
+	&:hover {
+		border-color: $yellow;
+		color: $yellow;
+	}
+	&.active {
+		pointer-events: auto;
+		opacity: 1;
+	}
+	position: fixed;
+	right: 15px;
+	bottom: 15px;
+	font-size: 40px;
+	width: 50px;
+	height: 50px;
+	border: 2px solid $text-color;
+	border-radius: 50%;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	color: $text-color;
+	@include md-device {
+		right: 50px;
+		bottom: 100px;
+	}
+}
+footer {
+	background: $text-color;
+	display: flex;
+	margin-top: 30px;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	& .footer-text {
+		color: $bg-color;
+	}
+}
