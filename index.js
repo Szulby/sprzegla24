@@ -2,7 +2,6 @@ const url =
 	'https://cors-anywhere.herokuapp.com/https://clutchlit.sprzeglo.com.pl/rekrutacja/produkty'
 let container = document.querySelector('.container')
 let boxes = 10
-let isList = false
 let showButton = document.querySelector('.show-more')
 let listButton = document.querySelector('.list')
 let scroll = document.querySelector('.scroll-top')
@@ -10,7 +9,6 @@ let scroll = document.querySelector('.scroll-top')
 listButton.addEventListener('click', function() {
 	container.classList.toggle('container-list')
 	this.classList.toggle('active')
-	console.log(this)
 })
 window.addEventListener('scroll', function() {
 	this.scrollY > 800
@@ -31,7 +29,6 @@ fetch(url)
 				}
 			})
 		})
-		console.log(data)
 		data.forEach((item, id) => {
 			if (id < boxes) {
 				addItem(item)
